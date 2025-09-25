@@ -1,6 +1,8 @@
+
+/* Nav bar css */
 .navbar-brand {
   font-family: "Ubuntu", sans-serif;
-  font-size: 2.2em;
+  font-size: 2em;
   font-weight: 900;
   color: #fff;
   letter-spacing: 1px;
@@ -15,11 +17,16 @@
 .custom-nav-item:hover {
   background-color: #dc3545;
   border: solid #dc3545 1px;
-  border-radius: 12px;
+  border-radius: 10px;
   font-weight: bold;
   transform: scale(1.05);
 }
 
+/* video and welcome message */
+.remove-vid-marg {
+  margin: 0px;
+  padding: 0px;
+}
 .vid-parent {
   position: relative;
   height: 100vh;
@@ -48,9 +55,8 @@
 
 .vid-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 35%;
+  left: 35%;
   text-align: center;
   color: #fff;
   z-index: 2;
@@ -86,3 +92,15 @@
   transform: scale(1.05);
   
 }
+
+/* bannaer */
+.bottom-banner {
+  color: #fff;
+  padding: 10px;
+}
+
+.bottom-banner:first-child {
+  padding-left: 50px;
+}
+
+
