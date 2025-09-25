@@ -17,7 +17,7 @@
 <body>
     
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark pl-5">
+    <nav class="navbar navbar-expand-sm navbar-dark pl-5 fixed-top">
     <a class="navbar-brand" href="#">ACADEXA</a>
     <span class="navbar-text">A Smart Online Learning Platform</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,21 @@
         </ul>
     </div>
     </nav>
+
+    <div class="container-fluid remove-vid-marg">
+        <div class="vid-parent">
+            <video playsinline autoplay muted loop>
+            <source src="asset/video/bashboradvideo.mp4" type="video/mp4" />
+            </video>
+            <div class="vid-overlay"></div>
+            
+            <div class="vid-content">
+            <h1 class="my-content">Welcome to Acadexa</h1>
+            <small class="my-content">Unlock Your Potential with Every Lesson</small><br />
+            <a href="#" class="get-start-btn">Get Start</a>
+            </div>
+        </div>
+    </div>
 
 
     <script src="view/js/jquery.min.js"></script>
