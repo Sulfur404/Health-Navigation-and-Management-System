@@ -19,8 +19,7 @@
       text-align: center;
       padding-top: 250px;
       padding-bottom: 250px;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                  url('https://embed.widencdn.net/img/csdam/1lrpkwficn/1600x900px/Photo_MDA_SF_PtConsult_ChoyNicole_Pt224_004_HomePage.jpg?crop=yes&position=c') no-repeat center/cover;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('https://embed.widencdn.net/img/csdam/1lrpkwficn/1600x900px/Photo_MDA_SF_PtConsult_ChoyNicole_Pt224_004_HomePage.jpg?crop=yes&position=c') no-repeat center/cover;
       color: white;
     }
 
@@ -51,7 +50,7 @@
       background: #e0a800;
     }
 
-    /* Features Section */
+    /* Features */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -85,7 +84,7 @@
       font-size: 14px;
     }
 
-    /* Section Template */
+    /* Section */
     .section {
       padding-left: 7%;
       padding-right: 7%;
@@ -166,16 +165,10 @@
 .section .content h2,
 .contact-info h2,
 .contact-info h4 {
-  color: #333;  /* dashboard heading color */
+  color: #333;  
   font-weight: 600;
 }
 
-/* Responsive */
-@media(max-width: 900px) {
-  .contact-container {
-    flex-direction: column;
-  }
-}
 
 .testimonials {
   background-color: #fff;
@@ -206,28 +199,3 @@
   font-weight: 600;
 }
 
-@media screen and (max-width: 768px) {
-.hero {
-    padding: 100px 10px;
-  }
-  .hero h2 {
-    font-size: 24px;
-  }
-  .hero p {
-    font-size: 14px;
-  }
-  .features {
-    padding: 30px 10px;
-    gap: 15px;
-  }
-   .section .image img {
-    max-width: 100%;
-    height: auto;
-  }
-  h1 { font-size: 28px; }
-  h2 { font-size: 24px; }
-  h3 { font-size: 20px; }
-  h4 { font-size: 18px; }
-  h5 { font-size: 16px; }
-  h6 { font-size: 14px; }
-}

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-/* Header Styles */
+/* Header */
 header {
     position: sticky;
     top: 0;
@@ -45,7 +45,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Footer Styles */
+/* Footer */
 footer {
     text-align: center;
     background: #b4dc92;
@@ -55,7 +55,7 @@ footer {
     font-weight: 500;
 }
 
-/* Contact Section Styles */
+/* Contact Section */
 .contact {
     padding-top: 50px;
     background: #e8e9ee;
@@ -92,7 +92,7 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Contact Form Styles */
+
 .contact-form {
     flex: 1;
 }
@@ -132,7 +132,7 @@ footer {
     border-color: #2d771e;
 }
 
-/* Social Media Icons */
+/* Social Media Icon */
 .social a {
     display: inline-block;
     margin: 0 10px;
@@ -144,50 +144,3 @@ footer {
     transform: scale(1.2);
 }
 
-
-/* Mobile devices */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    header .logo span {
-        font-size: 16px;
-    }
-
-   
-       nav {
-        display: none;
-    }
-    
-
-    nav a {
-        display: block;
-        margin: 8px 0;
-        font-size: 14px;
-    }
-
-    .contact-info h2 {
-        font-size: 24px;
-    }
-
-    .contact-info p {
-        font-size: 14px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        max-width: 100%;
-    }
-
-    .contact-form button {
-        width: 100%;
-    }
-
-    footer {
-        font-size: 14px;
-        padding: 10px;
-    }
-}

@@ -3,16 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const registerBtn = document.getElementById('register');
   const loginBtn = document.getElementById('login');
   
-  // ===== SHOW CORRECT PANEL BASED ON PHP MESSAGE =====
+  // show correct panel 
 if (document.getElementById("signupFormMessage").textContent.trim()) {
-  container.classList.add("active"); // Show Sign Up panel
+  container.classList.add("active"); 
 }
 
-  // Toggle between Sign In / Sign Up forms
+  // Toggle between 
   registerBtn.addEventListener('click', () => container.classList.add("active"));
   loginBtn.addEventListener('click', () => container.classList.remove("active"));
 
-  // ===== Password Show/Hide =====
+  // Password Show or Hide 
   function setupPasswordToggle(inputId, toggleId) {
     const input = document.getElementById(inputId);
     const toggle = document.getElementById(toggleId);
@@ -31,7 +31,7 @@ if (document.getElementById("signupFormMessage").textContent.trim()) {
   setupPasswordToggle("signupPassword", "toggleSignupPass");
   setupPasswordToggle("signinPassword", "toggleSigninPass");
 
-  // ===== SIGNUP VALIDATION =====
+  // signup validation
   const signupForm = document.getElementById("signupForm");
   const signupUsername = document.getElementById("signupUsername");
   const signupEmail = document.getElementById("signupEmail");
@@ -86,13 +86,13 @@ if (document.getElementById("signupFormMessage").textContent.trim()) {
     return true;
   }
 
-  // Real-time validation
+  // on time validation
   signupUsername.addEventListener("input", validateSignupUsername);
   signupEmail.addEventListener("input", validateSignupEmail);
   signupRole.addEventListener("change", validateSignupRole);
   signupPassword.addEventListener("input", validateSignupPassword);
 
-  // ===== SIGNUP SUBMIT =====
+  // signup submit
 signupForm.addEventListener("submit", (e) => {
   // Validate each field individually
   const usernameValid = validateSignupUsername();
@@ -100,13 +100,13 @@ signupForm.addEventListener("submit", (e) => {
   const roleValid = validateSignupRole();
   const passwordValid = validateSignupPassword();
 
-  // If any field invalid, prevent submit
+  // any field invalid
   if (!usernameValid || !emailValid || !roleValid || !passwordValid) {
     e.preventDefault();
   }
 });
 
-  // ===== SIGNIN VALIDATION =====
+  // signin validation
   const signinForm = document.getElementById("signinForm");
   const signinUsername = document.getElementById("signinUsername");
   const signinPassword = document.getElementById("signinPassword");
@@ -132,11 +132,11 @@ signupForm.addEventListener("submit", (e) => {
   return true;
 }
 
-  // Real-time validation
+  
   signinUsername.addEventListener("input", validateSigninUsername);
   signinPassword.addEventListener("input", validateSigninPassword);
 
-  // ===== SIGNIN SUBMIT =====
+  // signin submit
 signinForm.addEventListener("submit", (e) => {
   const usernameValid = validateSigninUsername();
   const passwordValid = validateSigninPassword();

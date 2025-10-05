@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 contentDiv.innerHTML = data;
-                // If the loaded content is the hospitals page, re-attach event listeners for delete
+                // attach event listeners for delete
                 if (page === 'adminHospitals') {
                     attachDeleteEventListeners();
                     attachSearchEventListener();
@@ -85,14 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // When the user clicks on <span> (x) or OK button, close the modal
+        // close the modal
         const closeModal = () => {
             modal.style.display = 'none';
         };
 
         closeBtn.onclick = closeModal;
 
-        // When the user clicks anywhere outside of the modal, close it
+        // clicks anywhere outside of the modal
         window.onclick = function(event) {
             if (event.target == modal) {
                 closeModal();
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(response => response.text())
                 .then(data => {
                     tableBody.innerHTML = data;
-                    // Re-attach delete listeners to the new rows
+                    // attach delete listeners
                     attachDeleteEventListeners();
                 })
                 .catch(error => console.error('Search error:', error));
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     fetch(this.href)
                         .then(response => {
                             if (response.ok) {
-                                // After successfully deleting, reload the hospitals content
+                                //successfully deleting
                                 loadContent('adminHospitals');
                             } else {
                                 alert('Error: Could not delete hospital.');
@@ -200,28 +200,24 @@ document.addEventListener('DOMContentLoaded', function() {
         return params.get('page');
     }
 
-    // Handle sidebar clicks
+    // sidebar 
 sidebarLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-        // Skip logout link (allow normal navigation)
         if (this.classList.contains('log-out')) {
             return; 
         }
 
         e.preventDefault();
         const page = this.getAttribute('data-page');
-        // Update URL without reloading
         history.pushState({page: page}, ``, `adminDashboard.php?page=${page}`);
         loadContent(page);
     });
 });
 
 
-    // Load initial page based on URL or default to adminOverview
     const initialPage = getPageFromUrl() || 'adminOverview';
     loadContent(initialPage);
-
-    // Handle browser back/forward buttons
+    
     window.onpopstate = function(event) {
         const page = (event.state && event.state.page) ? event.state.page : 'adminOverview';
         loadContent(page);

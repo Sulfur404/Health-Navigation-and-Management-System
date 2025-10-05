@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// check login
+if (!isset($_SESSION['user']) || $_SESSION['user']['usertype'] !== 'admin') {
+    header("Location: ../view/signin_signup.php");
+    exit();
+
+}
+$adminUsername = $_SESSION['user']['username']; 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +33,9 @@
         <div class="header-center">
             <span>Admin Dashboard</span>
         </div>
-       
+       <div class="header-right">
+            <span> Welcome, <?php echo htmlspecialchars($adminUsername); ?></span>
+        </div>
 
     </header>
 
