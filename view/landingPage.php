@@ -160,9 +160,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+    </section>
 
 
+  <!-- Footer -->
+  <?php include "../view/footer.php";?>
 
   <script src="../assets/js/landingpage.js"></script>
 </body>
