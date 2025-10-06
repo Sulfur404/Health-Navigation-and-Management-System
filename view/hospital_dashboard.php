@@ -56,3 +56,31 @@ $hospitalUsername = $_SESSION['user']['username'];
         <?php echo htmlspecialchars($hospitalUsername); ?>
     </span>
 </div>
+            <div class="notification" onclick="showNotifications()">
+                    <i class="fa fa-bell"></i>
+                    <span class="notification-count" id="notificationCount">0</span>
+                </div>
+                <div class="settings">
+                    <a href="#" onclick="showSection('changePassword')">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <?php include "../view/hdash_section.php"; ?>
+            <?php include "../view/hdash_Doctor.php"; ?>
+            <?php include "../view/hospital_Profile.php"; ?>
+        </div>
+
+        <?php include "../view/hdash_change_Password.php"; ?>
+        <?php include "../view/notification_panel.php"; ?>
+
+    <?php include "../view/dashboard_footer.php"; ?>
+    </div>
+
+    
+    <script src="../assets/js/hospital_dashboard.js"></script>
+</body>
+</html>
