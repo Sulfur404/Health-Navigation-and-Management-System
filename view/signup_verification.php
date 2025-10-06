@@ -11,7 +11,7 @@
     <div class="verify-container">
 
         <!-- user detalis -->
-        <div class="verify-card" id="userCard">
+        <!-- <div class="verify-card" id="userCard">
            <div class="logo">
                <img src="../assets/image/HNMS.png" alt="HNMS Logo">
                <span>HNMS</span>
@@ -20,7 +20,7 @@
             <p>Enter your E-mail to receive OTP.</p>
             <input type="email" id="userInput" placeholder="Enter your email">
             <button id="sendOtpBtn">Send OTP</button>
-        </div>
+        </div> -->
 
         <!-- otp varify -->
         <div class="verify-card" id="otpCard" style="display:none;">
