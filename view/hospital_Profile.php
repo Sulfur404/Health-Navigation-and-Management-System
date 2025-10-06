@@ -63,3 +63,61 @@ if (!$hospital) die("Hospital record not found.");
           </select>
         </div>
     </div>
+    <!-- Verification Documents -->
+    <div id="verificationDocsContainer" class="profile-box">
+      <h4>Verification Documents</h4><br>
+
+      <div class="profile-field">
+        <label>Profile Image:</label>
+        <input type="text" id="profilePlaceholder" readonly
+             placeholder="<?= !empty($hospital['profile_image']) ? htmlspecialchars($hospital['profile_image']) : 'No file chosen' ?>"
+             onclick="document.getElementById('profileImageInput').click();">
+        <input type="file" id="profileImageInput" name="profileImage" accept="image/*" style="display:none;"
+             onchange="document.getElementById('profilePlaceholder').value = this.files[0].name;
+                 document.getElementById('profileImagePreview').src = URL.createObjectURL(this.files[0]);">
+        <button type="button" onclick="document.getElementById('profileImageInput').click()">Upload</button>
+      </div>
+
+      <?php
+      $docs = [
+        'licenseFile' => 'License Certificate',
+        'accreditationFile' => 'Accreditation Certificate',
+        'vatFile' => 'Tax Certificate'
+      ];
+
+      foreach ($docs as $inputName => $label):
+        $dbField = str_replace('File', '_file', $inputName);
+        $fileValue = !empty($hospital[$dbField]) ? $hospital[$dbField] : '';
+      ?>
+      <div class="doc-item">
+        <label><?= $label ?>:</label>
+        <div class="file-input-container">
+          <input type="text"
+               id="<?= $inputName ?>Placeholder"
+               readonly
+               value="<?= htmlspecialchars($fileValue ?: 'No file chosen') ?>"
+               onclick="document.getElementById('<?= $inputName ?>Input').click();">
+          <input type="file"
+               id="<?= $inputName ?>Input"
+               name="<?= $inputName ?>"
+               accept=".pdf,.jpg,.png,image/*"
+               style="display:none;"
+               onchange="document.getElementById('<?= $inputName ?>Placeholder').value = this.files[0].name;">
+          <button type="button" onclick="document.getElementById('<?= $inputName ?>Input').click()">Upload</button>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+</div>
+
+    <div style="margin-top:10px;">
+      <button type="button" class="edit-btn" onclick="enableAllHospitalFields()">Edit</button>
+      <button type="submit" class="rightbtn">Update Profile</button>
+    </div>
+
+    </form>
+  
+</div>
+
+</body>
+</html>
