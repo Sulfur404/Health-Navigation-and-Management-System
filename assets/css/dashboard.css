@@ -185,3 +185,224 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* Profile */
+.profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+  color: #333;
+}
+
+.profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Settings icon */
+.settings i{
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.settings i:hover,
+.profile:hover {
+  color: #2887ec;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+/* MAIN CONTENT */
+.main {
+  margin-left: 260px;
+  margin-top: 60px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+ h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+p{
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Sections */
+.section {
+  display: none;
+}
+
+
+/* Cards */
+.card {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* Dashboard */
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dashboard-cards .card {
+  flex: 1 1 calc(50% - 20px);
+  min-width: 250px;
+}
+
+/* Welcome banner */
+.welcome-banner {
+  background: #bde4ad;
+  color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Buttons */
+button{
+  background-color: #b4dc92;
+  color: black;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+button:hover {
+  background-color: #9fd494;
+  transform: scale(1.02);
+  border-color: #2d771e;
+  transition: all 0.3s ease-in-out;
+}
+
+#searchPharmacy, #searchHospitals,#searchDoctors{
+  font-size:15px;
+  padding:12px; 
+  width:100%; 
+  border-radius:12px;
+  border: 1px solid #dcdcdc;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+#searchPharmacy:focus,
+#searchHospitals:focus,
+#searchMedicins:focus {
+  outline: none;
+  border-color: #9fd494;
+  box-shadow: 0 0 5px rgba(159, 212, 148, 0.5);
+}
+
+
+/* =======Doctor Search ============== */
+.doctor-search {
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  gap: 15px;
+  margin: 15px 0;
+  width: 100%;
+}
+
+/* ==========Input and Select ============= */
+.doctor-search select,
+.doctor-search input {
+  width: 100%; 
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+/* Focus Effect */
+.doctor-search select:focus,
+.doctor-search input:focus {
+  outline: none;
+  border-color: #9fd494;
+  box-shadow: 0 0 5px rgba(159, 212, 148, 0.5);
+}
+
+/* ---------------- HOSPITAL SECTION ---------------- */
+
+/* Hospital List Grid */
+.hospital-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  align-items: stretch;
+  margin-bottom: 10px;
+}
+
+/* Hospital Card */
+.hospital-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  min-height: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hospital-card:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
