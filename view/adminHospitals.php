@@ -1,4 +1,8 @@
-
+<?php
+require_once '../controller/adminHospitalsController.php';
+$controller = new AdminHospitalsController();
+$hospitals = $controller->index();
+?>
 
 <div class="hospitals-container">
     <div class="hospitals-table-container">
@@ -18,6 +22,19 @@
                     <th>Delete</th>
                 </tr>
             </thead>
+            <tbody>
+                <?php foreach ($hospitals as $hospital): ?>
+                    <tr>
+                        <td><?php echo $hospital['username']; ?></td>
+                        <td><?php echo $hospital['hospital_name']; ?></td>
+                        <td><?php echo $hospital['email']; ?></td>
+                        <td><?php echo $hospital['phone']; ?></td>
+                        <td><?php echo $hospital['address']; ?></td>
+                        <td><img src="../assets/uploads/doctors_document/<?php echo $hospital['profile_image']; ?>" alt="Profile Image" width="50"></td>
+                        <td><a href="../controller/adminHospitalsController.php?action=delete&username=<?php echo $hospital['username']; ?>" class="delete-btn">Delete</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
     </div>
     <div class="add-hospital-form-container">
