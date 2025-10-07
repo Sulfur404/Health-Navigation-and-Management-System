@@ -1,4 +1,11 @@
+<?php
+include "../config/db_connection.php";
+include "../controller/DoctorController.php";
 
+$doctorController = new DoctorController($conn);
+$doctors = $doctorController->getDoctors();
+$departments = $doctorController->getSpecializations();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +21,46 @@
     <div class="doctor-search">
         <select id="doctorDepartment">
             <option value="">Select department</option>
-            
+            <?php foreach($departments as $dept): ?>
+                <option value="<?= htmlspecialchars($dept) ?>"><?= htmlspecialchars($dept) ?></option>
+            <?php endforeach; ?>
         </select>
         <input type="text" id="searchDoctor" placeholder="Search by doctor name" onkeyup="searchDoctorAjax()">
     </div>
 
-    
+    <div class="doctor-list" id="doctorList">
+        <?php foreach($doctors as $doctor): ?>
+            <div class="doctor-card">
+                <img src="../assets/uploads/doctor_documents/<?= $doctor['profile_image'] ?: 'doc1.png' ?>" alt="<?= $doctor['doctor_name'] ?>">
+                <div class="doctor-info">
+                    <h4><?= $doctor['doctor_name'] ?></h4>
+                    <p><strong><?= $doctor['qualification'] ?></strong></p>
+                    <p><?= $doctor['specialization'] ?> | <?= $doctor['experience_years'] ?> yrs</p>
+                    <p>Fee: ৳<?= $doctor['consultation_fee'] ?></p>
+                    <p>Hospital:<?= $doctor['hospital_username']  ?></p>
+                </div>
+                <div class="button-group">
+                    <button class="btn-primary" 
+                        onclick="bookAppointmentFromDoctor('<?= $doctorNameJS ?>', '<?= $hospitalJS ?>')">
+                     Request Appointment
+                    </button>
+
+                    <button class="btn-secondary"
+                        onclick="viewDoctorDetails(this)"
+                        data-name="<?= $doctor['doctor_name'] ?>"
+                        data-email="<?= $doctor['email'] ?>"
+                        data-contact="<?= $doctor['contact'] ?>"
+                        data-specialization="<?= $doctor['specialization'] ?>"
+                        data-qualification="<?= $doctor['qualification'] ?>"
+                        data-fee="<?= $doctor['consultation_fee'] ?>"
+                        data-experience="<?= $doctor['experience_years'] ?>"
+                        data-image="<?= $doctor['profile_image'] ?: 'doc1.png' ?>"
+                        data-hospital="<?= $doctor['hospital_username']  ?>"
+                    >View Details</button>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </div>
 
 
