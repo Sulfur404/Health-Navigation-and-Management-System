@@ -137,3 +137,51 @@ body {
   font-weight: 500;
   font-size: 15px;
 }
+
+/* Menu bar icon */
+.menubar {
+  display: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menubar i {
+  font-size: 20px;
+}
+
+/* Navbar right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Notification */
+.notification {
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.notification:hover {
+  color: #007bff;
+}
+
+.notification-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
