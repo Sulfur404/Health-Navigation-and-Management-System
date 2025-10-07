@@ -96,3 +96,44 @@ body {
   border-bottom: 1px solid #ddd;
   z-index: 1000;
 }
+
+/* Navbar logo */
+.navbar-logo {
+  display: none;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbar-logo img {
+  width: 35px;
+  height: 35px;
+}
+
+.navbar-logo span {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Navbar links */
+.navbar-links {
+  display: flex;
+  gap: 100px;
+  font-weight: 500;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover {
+  color: #fff;
+}
+
+.navbar p{
+  margin-top: 16px;
+  font-weight: 500;
+  font-size: 15px;
+}
