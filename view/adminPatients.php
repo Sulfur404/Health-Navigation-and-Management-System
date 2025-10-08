@@ -1,3 +1,9 @@
+<?php
+require_once '../controller/adminPatientsController.php';
+$controller = new AdminPatientsController();
+$patients = $controller->index();
+?>
+
 <div class="hospitals-container">
     <div class="hospitals-table-container">
         <h2>Patients List</h2>
@@ -15,7 +21,20 @@
                     <th>Profile Image</th>
                     <th>Delete</th>
                 </tr>
-            
+            </thead>
+            <tbody>
+                <?php foreach ($patients as $patient): ?>
+                    <tr>
+                        <td><?php echo $patient['username']; ?></td>
+                        <td><?php echo $patient['full_name']; ?></td>
+                        <td><?php echo $patient['email']; ?></td>
+                        <td><?php echo $patient['gender']; ?></td>
+                        <td><?php echo $patient['dob']; ?></td>
+                        <td><img src="../assets/uploads/patient_documents/<?php echo $patient['profile_image']; ?>" alt="Profile Image" width="50"></td>
+                        <td><a href="../controller/adminPatientsController.php?action=delete&username=<?php echo $patient['username']; ?>" class="delete-btn">Delete</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
     </div>
     <div class="add-hospital-form-container">
