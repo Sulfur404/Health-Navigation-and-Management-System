@@ -1,3 +1,10 @@
+<?php
+include "../config/db_connection.php";
+include "../controller/AppointmentController.php";
+
+$controller = new AppointmentController($conn);
+$hospitals = $controller->getHospitals();
+?>
 
 <div id="appointments" class="section" style="display:none;"> <!-- Hidden by default -->
   <h3>Appointment Request Form</h3>
@@ -6,7 +13,12 @@
       <div class="form-row">
         <div class="form-group">
           <label>Hospital*</label>
-          
+          <select id="hospitalSelect" name="hospital_name" required>
+            <option value="">Select Hospital</option>
+            <?php foreach($hospitals as $hospital): ?>
+                <option value="<?= htmlspecialchars($hospital) ?>"><?= htmlspecialchars($hospital) ?></option>
+            <?php endforeach; ?>
+          </select>
         </div>
       </div>
 
