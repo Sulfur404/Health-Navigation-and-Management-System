@@ -592,3 +592,1590 @@ button:hover {
   border: 1px solid transparent;
   transition: all 0.3s ease;
 }
+
+
+.doctor-card .btn-secondary:hover {
+  background-color: #ddd;
+  transform: scale(1.02);
+  border-color: #45a049;
+
+}
+/* ---------------- PHARMACY SECTION ---------------- */
+
+/* Pharmacy List Grid */
+.pharmacy-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+
+/* Pharmacy Card */
+.pharmacy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  min-height: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pharmacy-card:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* Pharmacy Card Image */
+.pharmacy-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #4CAF50;
+  align-content: center;
+}
+
+/* Pharmacy Card Info */
+.pharmacy-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pharmacy-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.pharmacy-info p {
+  font-size: 14px;
+  color: #f60707;
+  margin-bottom: 8px;
+}
+
+.pharmacy-info .location {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 15px;
+}
+.pharmacy-info .facilities {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+/* Pharmacy Card Buttons */
+.pharmacy-card .button-group {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pharmacy-card .btn-primary {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 5px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.pharmacy-card .btn-primary:hover {
+  background-color: #45a049;
+  border-color: #fc0f03;
+}
+
+.pharmacy-card .btn-secondary {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 5px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.pharmacy-card .btn-secondary:hover {
+  background-color: #ddd;
+  border-color: #45a049;
+}
+
+/* Doctor List Grid */
+.doc-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Doctor Card */
+.doctor-card{
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* Doctor card images in cart and order summary */
+#cartItemsList .doctor-card img,
+#orderSummary img {
+    width: 60px;      
+    height: 60px;     
+    object-fit: cover; 
+    border-radius: 5px; 
+}
+
+
+.doctor-card h4 {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.doctor-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.doctor-card button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.doctor-card button:hover {
+  background: #0056b3;
+}
+/* for hospital dash*/
+#doctor input {
+  width: 100%;
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  margin-top: 15px;
+}
+
+.doctor-card .delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.doctor-card .delete-btn:hover {
+  background-color: #b02a37;
+}
+
+.doctor-card .edit-btn {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.doctor-card .edit-btn:hover {
+  background-color:#e0a800 ;
+}
+
+
+/* header btn */
+.med-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-right: 5px;
+}
+
+.med-header h3 {
+  margin: 0;
+}
+
+.med-header-buttons {
+  display: flex;
+  gap: 15px; 
+}
+
+/*============= for view details buttons div======= */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6); 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: relative;
+  animation: slideDown 0.3s ease-out;
+}
+
+.modal-content img {
+  width: 100px;   
+  height: 100px;     
+  max-width: 100%;   
+  object-fit: cover;  
+  border-radius: 50%; 
+  margin: 0 auto 15px auto;
+  border: 3px solid #4CAF50;
+  display: block; 
+  align-content: center;
+}
+
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-info p {
+  margin: 10px 0;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.modal-buttons .btn-primary {
+  background-color:#4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 5px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.modal-buttons .btn-primary:hover {
+  background-color: #45a049;
+  transform: scale(1.02);
+  border-color: #fc0f03;
+}
+
+.modal-buttons .btn-secondary {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 5px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.modal-buttons .btn-secondary:hover {
+  background-color: #ddd;
+  transform: scale(1.02);
+  border-color: #45a049;
+}
+
+
+/* ==================== Add/Edit Doctor Section ==================== */
+.doctor-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.doctor-box {
+  flex: 1 1 300px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doctor-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.doctor-box h4 {
+  margin-bottom: 15px;
+  color: #444;
+  font-size: 1.2em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* ==================== Form Fields ==================== */
+.doctor-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.doctor-field label {
+  flex: 1 1 120px;
+  font-weight: 500;
+  color: #333;
+  min-width: 100px;
+}
+
+.doctor-field input[type="text"],
+.doctor-field input[type="email"],
+.doctor-field input[type="password"],
+.doctor-field input[type="number"],
+.doctor-field input[type="date"],
+.doctor-field input[type="time"],
+.doctor-field input[type="file"],
+.doctor-field select {
+  flex: 2 1 200px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.doctor-field input:focus,
+.doctor-field select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+}
+
+/* ==================== Disabled Fields ==================== */
+.doctor-field input:disabled,
+.doctor-field select:disabled {
+  background: #f9f9f9;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* ==================== Document Upload Items ==================== */
+.doc-item {
+  margin-bottom: 15px;
+}
+
+.doc-item label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.doc-item input[type="file"] {
+  width: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* ==================== Password Toggle ==================== */
+#addDoc-toggle-password,
+#editDoc-toggle-password {
+  cursor: pointer;
+  font-size: 13px;
+  color: #0565f5;
+  user-select: none;
+}
+
+
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+
+
+.qty-controls button {
+  padding: 3px 8px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.qty-controls button {
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.cart-actions button{
+  background-color: #b4dc92;
+  color: black;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.cart-actions .btn-primary:hover,
+.cart-actions .btn-secondary:hover{
+  background-color: #9fd494;
+  transform: scale(1.02);
+  border-color: #2d771e;
+}
+
+/* ==================== Delivery / Checkout Section ==================== */
+.delivery-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* allow columns to wrap on small screens */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.order-box, .form-box {
+  flex: 1 1 300px; /* flexible width, minimum 300px */
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  max-width: 600px; /* limit max width */
+}
+
+/* Table inside order summary */
+.order-box table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block; /* makes table scrollable horizontally */
+}
+
+.order-box th, .order-box td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.qty-controls button {
+  padding: 5px 8px;
+  margin: 0 3px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f5f5f5;
+}
+
+/* Buttons in delivery form */
+.form-box button {
+  margin-top: 10px;
+}
+
+/* Inputs, selects, textarea */
+.form-box input, .form-box select, .form-box textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-box input:focus,
+.form-box select:focus, 
+.form-box textarea:focus{
+  outline: none;
+  border-color: #9fd494;
+  box-shadow: 0 0 5px rgba(159, 212, 148, 0.5);
+}
+
+/* Make label look like a button */
+.btn-prescription {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+  text-align: center;
+  margin-bottom: 10px;
+
+}
+
+.btn-prescription:hover {
+  background-color: #45a049;
+}
+
+/* Layout for prescription upload */
+.prescription-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #555;
+  word-break: break-word;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+/* addtocart btn */
+
+.qty-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-controls button {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.qty-controls button:hover {
+  background: #0056b3;
+}
+
+.qty-controls span {
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+/* Profile Edit Full-Width */
+#profileSection,
+#hospitalProfile,
+#editDoctorSection,
+#addDoctorSection {
+  width: 100%;             
+  max-width: none;         
+  margin: 0;              
+  padding: 20px;          
+  background: #fff;
+  border-radius: 0;      
+  box-shadow: none;       
+}
+
+#profileSection input,
+#profileSection select,
+#hospitalProfile input,
+#hospitalProfile select,
+#editDoctorSection input,
+#addDoctorSection input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin: 8px 0 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#profileSection button,
+#hospitalProfile button,
+#editDoctorSection button,
+#addDoctorSection button {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+#profileSection button:hover,
+#hospitalProfile button:hover,
+#editDoctorSection button:hover,
+#addDoctorSection button:hover {
+  background: #45a049;
+}
+.profile-field , .doctor-field{
+  margin-bottom: 15px;
+}
+
+.profile-field, .doctor-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.patient-box img{
+  margin-left: 200px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #4CAF50;
+  cursor: pointer;
+  align-content: center;
+}
+.profile-box img{
+  margin-left: 200px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #4CAF50;
+  cursor: pointer;
+  align-content: center;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between input and button */
+}
+
+.field-row input,select {
+  flex: 1; 
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#profileSection .editbtn{
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+#profileSection .editbtn:hover  {
+  background: #45a049;}
+
+/* Highlight input/select on focus */
+#profileSection input:focus,
+#profileSection select:focus ,
+#hospitalProfile input:focus ,
+#hospitalProfile select:focus {
+  outline: none;
+  border-color: #9fd494;
+  box-shadow: 0 0 5px rgba(159, 212, 148, 0.5);
+}
+
+
+/* Container for both sections */
+.profile-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Each section */
+#hospitalInfoContainer,
+#verificationDocsContainer,
+#addDoctorInfoContainer,
+#editDoctorInfoContainer,
+#adddoctorDocsContainer,
+#editDoctorDocsContainer,
+#editPatientDocsContainer,
+#editPatientInfoContainer{
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+/* Verification Items */
+.verification-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.verification-item label {
+  width: 120px;
+  font-weight: 500;
+}
+
+
+ /* ================== Appointments Section ================== */
+.section#appointmentsSection {
+    max-width: 100%;
+    margin: 5px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.section#appointmentsSection:hover{
+   transform: translateY(2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+
+/* Table Container for horizontal scroll on mobile */
+.appointments-table-container {
+    overflow-x: auto;
+}
+
+/* Appointments Table */
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.appointments-table th,
+.appointments-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.appointments-table th {
+    background-color: #bde4ad;
+    font-weight: 600;
+}
+
+.appointments-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Status badges */
+.status-confirmed {
+    color: #155724;
+    background-color: #d4edda;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.status-pending {
+    color: #856404;
+    background-color: #fff3cd;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.status-cancelled {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* Action buttons */
+.app-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    margin: 2px 0;
+}
+
+.app-btn-view {
+    background-color: #007BFF;
+}
+
+.app-btn-view:hover {
+    background-color: #0069d9;
+}
+
+.app-btn-cancel {
+    background-color: #dc3545;
+}
+
+.app-btn-cancel:hover {
+    background-color: #c82333;
+}
+/* ================== History Section ================== */
+.section#historySection {
+    max-width: 100%;
+    margin: 5px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.section#historySection:hover{
+   transform: translateY(2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.history-table-container {
+    overflow-x: auto; /* scroll on mobile */
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.history-table th,
+.history-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.history-table th {
+    background-color: #bde4ad;
+    font-weight: 600;
+}
+
+.history-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Status badges */
+.status-completed {
+    color: #155724;
+    background-color: #d4edda;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.status-ongoing {
+    color: #856404;
+    background-color: #fff3cd;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.status-missed {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* ===============change password========== */
+    .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding-right: 50px; 
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  transform: translateY(-50%); 
+  cursor: pointer;
+  font-size: 12px;
+  color: #007bff;
+  user-select: none;
+}
+
+
+    .error-text {
+      font-size: 11px;
+      color: red;
+      margin-top: 3px;
+    }
+    .success-text {
+      font-size: 11px;
+      color: green;
+      margin-top: 3px;
+    }
+    #passwordMessage {
+      margin-top: 10px;
+      font-size: 11px;
+      color: red;
+      text-align: center;
+    }
+
+/* ===============Footer============== */
+.footer {
+  background: #bde4ad;
+  color: #333;
+  text-align: center;
+  padding: 12px 10px;
+  font-size: 13px;
+  border-top: 1px solid #ddd;
+  border-radius: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: auto;
+}
+
+
+/* Make table scrollable on small screens */
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+} */
+
+
+/* Appointment form */
+.appointment-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.appointment-card .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.appointment-card label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.appointment-card input,
+.appointment-card select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.appointment-card input:focus,
+.appointment-card select:focus {
+  outline: none;
+  border-color: #9fd494;
+  box-shadow: 0 0 5px rgba(159, 212, 148, 0.5);
+}
+
+#appointmentForm button {
+  width: 50%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #b4dc92;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  margin: 5px auto ;
+}
+
+#appointmentForm button:hover {
+  background-color: #9fd494;
+  transform: scale(1.02);
+  border-color: #2d771e;
+  transition: all 0.3s ease-in-out;
+}
+
+.appointment-card .form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.appointment-card .form-row .form-group {
+  flex: 1;
+}
+
+/* Change Password Form Styling */
+#changePassword label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: black;
+}
+
+#changePassword input {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
+}
+#changePassword input:focus {
+  outline: none;
+  border-color: #9fd494;
+  box-shadow: 0 0 5px rgba(159, 212, 148, 0.5);
+}
+
+#changePassword button {
+  width: 50%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #b4dc92;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  margin: 5px auto ;
+}
+
+#changePassword button:hover {
+  background-color: #9fd494;
+  transform: scale(1.02);
+  border-color: #2d771e;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Notification Popup */
+.notification-popup {
+  position: fixed;
+  top: 60px; 
+  right: 90px; 
+  width: 380px;
+  max-height: 500px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.notification-header span{
+  margin-top: 7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.notification-header button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.notification-body {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.notification-item {
+  background: #c6e0f5;
+  margin: 8px 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.notification-item span.date {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.notification-footer {
+  padding: 8px 15px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.notification-footer a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+/* patient profile edit btn */
+    .patient-primary-btn,
+    .patient-edit-btn{
+     display: flex;
+    gap: 10px;
+     flex-wrap: wrap;
+    }
+/* Buttons container */
+.profile-btn {
+    display: flex;
+    gap: 10px;       
+    flex-wrap: wrap;  
+}
+
+/* ============ Hospital Facilities & Doctor Days ========== */
+#hospitalFacilities, #doctorDays {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+/* Label styling */
+#hospitalFacilities label,
+#doctorDays label {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Checkbox inside label */
+#hospitalFacilities label input[type="checkbox"],
+#doctorDays label input[type="checkbox"] {
+  margin-right: 6px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Hover effect on label */
+#hospitalFacilities label:hover,
+#doctorDays label:hover {
+  background: #e0f0ff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Disabled checkboxes styling */
+#hospitalFacilities label input[type="checkbox"]:disabled,
+#doctorDays label input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Optional: disable pointer events on label when checkbox is disabled */
+#hospitalFacilities label input[type="checkbox"]:disabled + span,
+#doctorDays label input[type="checkbox"]:disabled + span {
+  pointer-events: none;
+}
+
+/* ==================== RESPONSIVE STYLES (≤768px) ==================== */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .sidebar .logo-text {
+    display: none;
+  }
+
+  /* Navbar */
+  .menubar {
+    display: block;
+  }
+
+  .navbar {
+    left: 0;
+    width: 100%;
+  }
+
+  .navbar-links,
+  .navbar p {
+    display: none;
+  }
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .navbar-right {
+    gap: 12px;
+    align-items: center;
+  }
+  .navbar-right span{
+    display: none;
+  }
+
+  /* Main content */
+  .main {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+
+  /* Dashboard cards */
+  .dashboard-cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-cards .card {
+    flex: 1 1 100%;
+  }
+
+  /* Appointment form */
+  .appointment-card .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Profile */
+  .profile-name {
+    display: none;
+  }
+
+  .profile img {
+    margin-right: 0;
+  }
+
+  /* Notification */
+  .notification-count {
+    font-size: 10px;
+    top: -5px;
+    right: -5px;
+  }
+
+  .notification-popup {
+    width: 300px;
+    right: 10px;
+    top: 60px;
+    max-height: 400px;
+  }
+
+  .notification-item {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .notification-header span {
+    font-size: 14px;
+  }
+
+  .notification-footer a {
+    font-size: 13px;
+  }
+
+  /* Change Password button */
+  #changePassword button {
+    width: 100%;
+  }
+
+  /* Doctor Search */
+  .doctor-search {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .doctor-search select,
+  .doctor-search input {
+    width: 100%;
+  }
+
+  /* Delivery & Orders */
+  .delivery-container {
+    flex-direction: column;
+  }
+
+  .order-box,
+  .form-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .qty-controls button {
+    padding: 4px 6px;
+    margin: 0 2px;
+  }
+
+  .order-box table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  /* Blood search */
+  .blood-search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .blood-search select,
+  .blood-search button {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+/* Modal */
+  .modal-content {
+    padding: 15px 20px;
+  }
+
+  .modal-content img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .close {
+    font-size: 20px;
+    top: 8px;
+    right: 15px;
+  }
+
+  .modal-buttons {
+    justify-content: center;
+  }
+
+  .modal-buttons .btn-primary,
+  .modal-buttons .btn-secondary {
+    flex: 1 1 45%; 
+    text-align: center;
+  }
+
+  /* Profile container and doctor container */
+  .profile-container,
+  .doctor-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #hospitalInfoContainer,
+  #verificationDocsContainer,
+  #addDoctorInfoContainer,
+  #editDoctorInfoContainer,
+  #adddoctorDocsContainer,
+  #editDoctorDocsContainer ,
+  #editPatientDocsContainer,
+  #editPatientInfoContainer,
+  #editHospitalInfoContainer{
+    width: 100%;
+    min-width: 0;
+    padding: 15px;
+  }
+
+  .field-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .field-row img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .rightbtn, .editbtn, .edit-btn {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .profile-btn {
+    flex-direction: column;
+  }
+
+  /* Verification items stack vertically */
+  .verification-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .verification-item label {
+    width: 100%;
+  }
+
+  /* Doctor Box */
+  .doctor-box {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .doctor-box input,
+  .doctor-box select {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .doctor-box button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    margin-top: 5px;
+  }
+
+  /* Document upload items */
+  .doc-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .doc-item input[type="file"] {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .doc-item button {
+    align-self: flex-start;
+    padding: 6px 14px;
+    font-size: 0.9em;
+  }
+
+  /* Appointments & History */
+  .appointments-table th,
+  .appointments-table td,
+  .history-table th,
+  .history-table td {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  /* Hospital Facilities */
+  #hospitalFacilities label {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  /* Doctors Inventory list */
+  .doc-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .doctor-box {
+    min-width: 100%;
+  }
+  .patient-box img {
+        margin-left: 50px;
+        width: 100px;
+        height: 100px;
+        max-width: 40vw;
+        max-height: 40vw;
+    }
+
+    .profile-box img {
+        margin-left: 50px;
+        width: 100px;
+        height: 100px;
+        max-width: 40vw;
+        max-height: 40vw;
+    }
+}
