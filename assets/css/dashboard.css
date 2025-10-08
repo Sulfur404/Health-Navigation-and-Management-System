@@ -1723,3 +1723,459 @@ button:hover {
   border-color: #2d771e;
   transition: all 0.3s ease-in-out;
 }
+
+
+/* Notification Popup */
+.notification-popup {
+  position: fixed;
+  top: 60px; 
+  right: 90px; 
+  width: 380px;
+  max-height: 500px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.notification-header span{
+  margin-top: 7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.notification-header button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.notification-body {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.notification-item {
+  background: #c6e0f5;
+  margin: 8px 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.notification-item span.date {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.notification-footer {
+  padding: 8px 15px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.notification-footer a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+/* patient profile edit btn */
+    .patient-primary-btn,
+    .patient-edit-btn{
+     display: flex;
+    gap: 10px;
+     flex-wrap: wrap;
+    }
+/* Buttons container */
+.profile-btn {
+    display: flex;
+    gap: 10px;       
+    flex-wrap: wrap;  
+}
+
+/* ============ Hospital Facilities & Doctor Days ========== */
+#hospitalFacilities, #doctorDays {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+/* Label styling */
+#hospitalFacilities label,
+#doctorDays label {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Checkbox inside label */
+#hospitalFacilities label input[type="checkbox"],
+#doctorDays label input[type="checkbox"] {
+  margin-right: 6px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Hover effect on label */
+#hospitalFacilities label:hover,
+#doctorDays label:hover {
+  background: #e0f0ff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Disabled checkboxes styling */
+#hospitalFacilities label input[type="checkbox"]:disabled,
+#doctorDays label input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Optional: disable pointer events on label when checkbox is disabled */
+#hospitalFacilities label input[type="checkbox"]:disabled + span,
+#doctorDays label input[type="checkbox"]:disabled + span {
+  pointer-events: none;
+}
+
+/* ==================== RESPONSIVE STYLES (≤768px) ==================== */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .sidebar .logo-text {
+    display: none;
+  }
+
+  /* Navbar */
+  .menubar {
+    display: block;
+  }
+
+  .navbar {
+    left: 0;
+    width: 100%;
+  }
+
+  .navbar-links,
+  .navbar p {
+    display: none;
+  }
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .navbar-right {
+    gap: 12px;
+    align-items: center;
+  }
+  .navbar-right span{
+    display: none;
+  }
+
+  /* Main content */
+  .main {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+
+  /* Dashboard cards */
+  .dashboard-cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-cards .card {
+    flex: 1 1 100%;
+  }
+
+  /* Appointment form */
+  .appointment-card .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Profile */
+  .profile-name {
+    display: none;
+  }
+
+  .profile img {
+    margin-right: 0;
+  }
+
+  /* Notification */
+  .notification-count {
+    font-size: 10px;
+    top: -5px;
+    right: -5px;
+  }
+
+  .notification-popup {
+    width: 300px;
+    right: 10px;
+    top: 60px;
+    max-height: 400px;
+  }
+
+  .notification-item {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .notification-header span {
+    font-size: 14px;
+  }
+
+  .notification-footer a {
+    font-size: 13px;
+  }
+
+  /* Change Password button */
+  #changePassword button {
+    width: 100%;
+  }
+
+  /* Doctor Search */
+  .doctor-search {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .doctor-search select,
+  .doctor-search input {
+    width: 100%;
+  }
+
+  /* Delivery & Orders */
+  .delivery-container {
+    flex-direction: column;
+  }
+
+  .order-box,
+  .form-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .qty-controls button {
+    padding: 4px 6px;
+    margin: 0 2px;
+  }
+
+  .order-box table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  /* Blood search */
+  .blood-search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .blood-search select,
+  .blood-search button {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+/* Modal */
+  .modal-content {
+    padding: 15px 20px;
+  }
+
+  .modal-content img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .close {
+    font-size: 20px;
+    top: 8px;
+    right: 15px;
+  }
+
+  .modal-buttons {
+    justify-content: center;
+  }
+
+  .modal-buttons .btn-primary,
+  .modal-buttons .btn-secondary {
+    flex: 1 1 45%; 
+    text-align: center;
+  }
+
+  /* Profile container and doctor container */
+  .profile-container,
+  .doctor-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #hospitalInfoContainer,
+  #verificationDocsContainer,
+  #addDoctorInfoContainer,
+  #editDoctorInfoContainer,
+  #adddoctorDocsContainer,
+  #editDoctorDocsContainer ,
+  #editPatientDocsContainer,
+  #editPatientInfoContainer,
+  #editHospitalInfoContainer{
+    width: 100%;
+    min-width: 0;
+    padding: 15px;
+  }
+
+  .field-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .field-row img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .rightbtn, .editbtn, .edit-btn {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .profile-btn {
+    flex-direction: column;
+  }
+
+  /* Verification items stack vertically */
+  .verification-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .verification-item label {
+    width: 100%;
+  }
+
+  /* Doctor Box */
+  .doctor-box {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .doctor-box input,
+  .doctor-box select {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .doctor-box button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    margin-top: 5px;
+  }
+
+  /* Document upload items */
+  .doc-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .doc-item input[type="file"] {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .doc-item button {
+    align-self: flex-start;
+    padding: 6px 14px;
+    font-size: 0.9em;
+  }
+
+  /* Appointments & History */
+  .appointments-table th,
+  .appointments-table td,
+  .history-table th,
+  .history-table td {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  /* Hospital Facilities */
+  #hospitalFacilities label {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  /* Doctors Inventory list */
+  .doc-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .doctor-box {
+    min-width: 100%;
+  }
+  .patient-box img {
+        margin-left: 50px;
+        width: 100px;
+        height: 100px;
+        max-width: 40vw;
+        max-height: 40vw;
+    }
+
+    .profile-box img {
+        margin-left: 50px;
+        width: 100px;
+        height: 100px;
+        max-width: 40vw;
+        max-height: 40vw;
+    }
+}
