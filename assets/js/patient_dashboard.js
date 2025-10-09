@@ -141,3 +141,286 @@ document.getElementById("gender").addEventListener("change", validateGender);
 document.getElementById("contact").addEventListener("input", validateContact);
 document.getElementById("doctorSelect").addEventListener("change", validateDoctor);
 document.getElementById("appointmentDate").addEventListener("change", validateAppointmentDate);
+
+// Hospital Search 
+async function searchHospitalAjax() {
+  try {
+    const keyword = document.getElementById('searchHospitals').value;
+    const res = await fetch(`../controller/hospital_search.php?keyword=${encodeURIComponent(keyword)}`);
+    document.getElementById('hospitalList').innerHTML = await res.text();
+  } catch (err) {
+    console.error("Error fetching hospitals:", err);
+  }
+}
+
+// Doctor Search 
+async function searchDoctorAjax() {
+  try {
+    const keyword = document.getElementById('searchDoctor').value;
+    const specialization = document.getElementById('doctorDepartment').value;
+
+    const res = await fetch(
+      `../controller/doctor_search.php?keyword=${encodeURIComponent(keyword)}&specialization=${encodeURIComponent(specialization)}`
+    );
+
+    document.getElementById('doctorList').innerHTML = await res.text();
+  } catch (err) {
+    console.error("Error fetching doctors:", err);
+  }
+}
+
+document.getElementById('searchDoctor')?.addEventListener('keyup', searchDoctorAjax);
+document.getElementById('doctorDepartment')?.addEventListener('change', searchDoctorAjax);
+
+function viewHospitalDetails(button) {
+    document.getElementById('modalHospitalName').innerText = button.closest('.hospital-card').querySelector('h4').innerText;
+    document.getElementById('modalEmail').innerText = button.dataset.email;
+    document.getElementById('modalPhone').innerText = button.dataset.phone;
+    document.getElementById('modalAddress').innerText = button.dataset.address;
+    document.getElementById('modalCategory').innerText = button.closest('.hospital-card').querySelector('.hospital-info p').innerText.replace('Category: ', '');
+    document.getElementById('hospitalModal').style.display = 'flex';
+}
+
+function viewDoctorDetails(button) {
+    const name = button.dataset.name;
+    const email = button.dataset.email;
+    const contact = button.dataset.contact;
+    const specialization = button.dataset.specialization;
+    const qualification = button.dataset.qualification;
+    const fee = button.dataset.fee;
+    const experience = button.dataset.experience;
+    const image = button.dataset.image;
+    const hospital = button.dataset.hospital; 
+
+    document.getElementById("modalDoctorName").textContent = name;
+    document.getElementById("modalEmail").textContent = email || 'N/A';
+    document.getElementById("modalContact").textContent = contact || 'N/A';
+    document.getElementById("modalSpecialization").textContent = specialization || 'N/A';
+    document.getElementById("modalQualification").textContent = qualification || 'N/A';
+    document.getElementById("modalExperience").textContent = experience || '0';
+    document.getElementById("modalFee").textContent = fee || '0';
+    document.getElementById("modalDoctorImage").src = `../assets/uploads/doctor_documents/${image}`;
+    document.getElementById("modalHospital").textContent = hospital || 'N/A'; 
+
+    document.getElementById("doctorModal").style.display = "flex";
+}
+function closeModal() {
+    document.getElementById('hospitalModal').style.display = 'none';
+    document.getElementById('doctorModal').style.display = 'none';
+}
+
+// Close model
+window.onclick = function(event) {
+    const hospitalModal = document.getElementById('hospitalModal');
+    const doctorModal = document.getElementById('doctorModal');
+
+    if (event.target === hospitalModal) {
+        hospitalModal.style.display = "none";
+    }
+
+    if (event.target === doctorModal) {
+        doctorModal.style.display = "none";
+    }
+}
+
+
+
+// Book Appointment
+function bookAppointmentFromDoctor(doctorName, hospitalName) {
+    const section = document.getElementById('appointments');
+    section.style.display = 'block';
+    section.scrollIntoView({ behavior: 'smooth' });
+
+    const doctorSelect = document.getElementById('doctorSelect');
+    doctorSelect.innerHTML = '<option value="'+doctorName+'">'+doctorName+'</option>';
+    doctorSelect.value = doctorName;
+
+    document.getElementById('hospitalSelect').value = hospitalName;
+
+    closeModal();
+}
+
+// Trigger
+function bookAppointmentFromModal() {
+    const doctorName = document.getElementById('modalDoctorName').textContent.trim();
+    const hospitalName = document.getElementById('modalHospital').textContent.trim();
+
+    bookAppointmentFromDoctor(doctorName, hospitalName);
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    searchHospitalAjax();
+    searchDoctorAjax();
+    loadAppointments(); 
+    loadHistory();
+});
+
+// Change Password 
+    function togglePassword(fieldId) {
+      const input = document.getElementById(fieldId);
+      const toggle = input.nextElementSibling;
+      if (input.type === "password") {
+        input.type = "text";
+        toggle.textContent = "Hide";
+      } else {
+        input.type = "password";
+        toggle.textContent = "Show";
+      }
+    }
+
+    const currentPassword = document.getElementById("currentPassword");
+    const newPassword = document.getElementById("newPassword");
+    const confirmPassword = document.getElementById("confirmPassword");
+
+    const currentError = document.getElementById("currentError");
+    const newError = document.getElementById("newError");
+    const confirmError = document.getElementById("confirmError");
+    const message = document.getElementById("passwordMessage");
+
+    function validateCurrent() {
+      if (!currentPassword.value.trim()) {
+        currentError.textContent = "Current password is required.";
+      } else {
+        currentError.textContent = "";
+      }
+    }
+
+   function validateNew() {
+  const newVal = newPassword.value.trim();
+
+  if (!newVal) {
+    newError.textContent = "New password is required.";
+  } 
+  else if (
+    newVal.length < 6 ||               
+    !/[A-Z]/.test(newVal) ||          
+    !/[a-z]/.test(newVal) ||          
+    !/\d/.test(newVal) ||         
+    !/[@$!%*?&]/.test(newVal)         
+  ) {
+    newError.textContent = "Password must include upper, lower, number, special char & 6+ chars.";
+  } 
+  else if (newVal === currentPassword.value.trim() && newVal !== "") {
+    newError.textContent = "New password cannot be the same as current.";
+  } 
+  else {
+    newError.textContent = "";
+  }
+
+  validateConfirm(); 
+}
+
+
+    function validateConfirm() {
+      const newVal = newPassword.value.trim();
+      const confirmVal = confirmPassword.value.trim();
+      if (!confirmVal) {
+        confirmError.textContent = "Confirm password is required.";
+      } else if (newVal !== confirmVal) {
+        confirmError.textContent = "Passwords do not match.";
+      } else {
+        confirmError.textContent = "";
+      }
+    }
+
+    currentPassword.addEventListener("input", validateCurrent);
+    newPassword.addEventListener("input", validateNew);
+    confirmPassword.addEventListener("input", validateConfirm);
+
+    document.getElementById("changePasswordForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      validateCurrent();
+      validateNew();
+      validateConfirm();
+
+      if (!currentError.textContent && !newError.textContent && !confirmError.textContent) {
+        message.textContent = "Password updated successfully!";
+        message.style.color = "green";
+        this.reset();
+      } else {
+        message.textContent = "Please fix the errors above.";
+        message.style.color = "red";
+      }
+    });
+
+
+// appointments data
+let my_appointments = [
+    { id: 1, doctor: "Dr. Rockey", department: "Cardiology", hospital: "City Hospital", address: "123 Main St", date: "2025-09-20", time: "10:00 AM", status: "Confirmed" },
+    { id: 2, doctor: "Dr. Nafiz", department: "Dermatology", hospital: "Green Clinic", address: "45 Park Ave", date: "2025-09-22", time: "02:30 PM", status: "Pending" },
+    { id: 3, doctor: "Dr. Rafi", department: "Neurology", hospital: "Central Hospital", address: "78 High St", date: "2025-09-25", time: "11:15 AM", status: "Cancelled" }
+];
+
+function loadAppointments() {
+    const tbody = document.getElementById("appointmentsBody");
+    tbody.innerHTML = "";
+
+    my_appointments.forEach((app, index) => {
+        let statusClass = app.status.toLowerCase();
+        tbody.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${app.doctor}</td>
+                <td>${app.department}</td>
+                <td>${app.hospital}</td>
+                <td>${app.address}</td>
+                <td>${app.date}</td>
+                <td>${app.time}</td>
+                <td><span class="status-${statusClass}">${app.status}</span></td>
+                <td>
+                    <button class="app-btn app-btn-view" onclick="viewAppointment(${app.id})">View</button>
+                    <button class="app-btn app-btn-cancel" onclick="cancelAppointment(${app.id})">Cancel</button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+function viewAppointment(id){
+    alert("View details for appointment #" + id);
+}
+
+function cancelAppointment(id){
+    alert("Cancel appointment #" + id);
+}
+
+function showAppointments(){
+    showSection("appointmentsSection"); 
+    loadAppointments();
+}
+
+// patient data
+let my_history = [
+    { id: 1, doctor: "Dr. Smith", department: "Cardiology", hospital: "City Hospital", address: "123 Main St", date: "2025-01-15", diagnosis: "Hypertension", treatment: "Medication", status: "Completed" },
+    { id: 2, doctor: "Dr. Jane", department: "Dermatology", hospital: "Green Clinic", address: "45 Park Ave", date: "2025-03-10", diagnosis: "Acne", treatment: "Topical Cream", status: "Completed" },
+    { id: 3, doctor: "Dr. John", department: "Neurology", hospital: "Central Hospital", address: "78 High St", date: "2025-08-05", diagnosis: "Migraine", treatment: "Prescription", status: "Ongoing" }
+];
+
+function loadHistory() {
+    const tbody = document.getElementById("historyBody");
+    tbody.innerHTML = "";
+
+    my_history.forEach((item, index) => {
+        let statusClass = item.status.toLowerCase();
+        tbody.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${item.doctor}</td>
+                <td>${item.department}</td>
+                <td>${item.hospital}</td>
+                <td>${item.address}</td>
+                <td>${item.date}</td>
+                <td>${item.diagnosis}</td>
+                <td>${item.treatment}</td>
+                <td><span class="status-${statusClass}">${item.status}</span></td>
+            </tr>
+        `;
+    });
+}
+
+function showHistory() {
+    showSection("historySection");
+    loadHistory();
+}
