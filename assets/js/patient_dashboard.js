@@ -424,3 +424,74 @@ function showHistory() {
     showSection("historySection");
     loadHistory();
 }
+
+// Patient Profile
+function showProfile() { 
+    showSection("profileSection"); 
+    loadProfile(); 
+}
+
+function loadProfile() {
+    document.getElementById("profileName").value = patientProfile.name || "";
+    document.getElementById("profileEmail").value = patientProfile.email || "";
+    document.getElementById("username").value = patientProfile.username || "";
+    document.getElementById("profilePhone").value = patientProfile.phone || "";
+    document.getElementById("navbarProfileName").innerText = patientProfile.name || patientProfile.username;
+}
+
+
+// Edit Field
+function disableAllFields() {
+    document.querySelectorAll('#editPatientForm input, #editPatientForm select,#editPatientDocsContainer input, #editPatientDocsContainer button').forEach(el => {
+        if(!el.classList.contains('editbtn')) {
+            el.setAttribute('disabled', true);
+        }
+    });
+
+    document.getElementById("editPatientUsername").setAttribute("readonly", true);
+    document.getElementById("editPatientEmail").setAttribute("readonly", true);
+}
+
+function enableAllFields() {
+    document.querySelectorAll('#editPatientForm input, #editPatientForm select, #editPatientDocsContainer input , #editPatientDocsContainer button').forEach(el => {
+        if(el.id !== "editPatientUsername" && el.id !== "editPatientEmail" && !el.classList.contains('editbtn')) {
+            el.removeAttribute('disabled');
+        }
+    });
+
+    document.getElementById("editPatientUsername").setAttribute("readonly", true);
+    document.getElementById("editPatientEmail").setAttribute("readonly", true);
+
+    alert("You can now edit your profile (except username and email)!");
+}
+
+window.onload = disableAllFields;
+
+
+// Image Upload
+const profileImageInput = document.getElementById('profileImageInput');
+const profileImagePreview = document.getElementById('profileImagePreview');
+
+// Upload Document
+function uploadProfileDoc(inputId) {
+    const fileInput = document.getElementById(inputId);
+    if (fileInput) {
+        fileInput.click();
+    } else {
+        console.error("No file input found with id:", inputId);
+    }
+}
+
+profileImageInput.addEventListener('change', e => {
+    const file = e.target.files[0];
+    if(file){
+        const reader = new FileReader();
+        reader.onload = ev => {
+            profileImagePreview.src = ev.target.result;
+            patientProfile.profileImage = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+updateDashboard();
