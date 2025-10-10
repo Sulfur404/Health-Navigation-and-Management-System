@@ -36,7 +36,6 @@ $patientUsername = $_SESSION['user']['username'];
   </div>
 
   <div class="main">
-    <!-- Navbar -->
     <div class="navbar">
       <div class="menubar" onclick="toggleSidebar()">
         <i class="fa fa-bars"></i>
@@ -74,10 +73,12 @@ $patientUsername = $_SESSION['user']['username'];
       <?php include "../view/patient_Find_Hospital.php"; ?>
       <?php include "../view/find_Doctor.php"; ?>
       <?php include "../view/book_Appointment.php"; ?>
+      <?php include "../view/my_appointments.php"; ?>
+      <?php include "../view/patient_history.php"; ?>
+      <?php include "../view/patient_Profile.php"; ?>
     </div>
       <?php include "../view/change_Password.php"; ?>
       <?php include "../view/notification_panel.php"; ?>
-    <?php include "../view/dashboardFooter.php"; ?>
   </div>
   <script src="../assets/js/patient_dashboard.js"></script>
 </body>
