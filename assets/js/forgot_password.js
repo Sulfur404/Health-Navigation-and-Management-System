@@ -87,8 +87,7 @@ otpInputs.forEach((input, i) => {
 
 // pass validation
 function validatePassword(pass) {
-    // 8+ chars, uppercase, lowercase, number, special char
-    const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+   const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
     return pattern.test(pass);
 }
 
@@ -100,7 +99,6 @@ newPassInput.addEventListener("input", () => {
         resetPasswordError.textContent = "";
     }
 
-    // confirm password
     if (confirmPassInput.value && confirmPassInput.value !== newPassInput.value) {
         confirmPasswordError.textContent = "Passwords do not match.";
     } else {

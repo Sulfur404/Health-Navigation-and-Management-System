@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 contentDiv.innerHTML = data;
-                // attach event listeners for delete
                 if (page === 'adminHospitals') {
                     attachDeleteEventListeners();
                     attachSearchEventListener();
