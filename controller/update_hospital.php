@@ -31,7 +31,6 @@ $fileFields = [
 
 foreach ($fileFields as $inputName => $dbField) {
     if (!empty($_FILES[$inputName]['name']) && is_uploaded_file($_FILES[$inputName]['tmp_name'])) {
-        // Get the original uploaded name
         $originalName = basename($_FILES[$inputName]['name']); 
 
         $filename = preg_replace('/[^A-Za-z0-9._-]/', '_', $originalName);
