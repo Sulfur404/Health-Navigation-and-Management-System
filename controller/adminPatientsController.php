@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['username'])) {
     $controller = new AdminPatientsController();
     if ($controller->deletePatient($_GET['username'])) {
-        http_response_code(200); // Success
+        http_response_code(200); 
     } else {
         http_response_code(500); 
     }
