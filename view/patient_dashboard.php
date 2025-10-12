@@ -79,6 +79,7 @@ $patientUsername = $_SESSION['user']['username'];
     </div>
       <?php include "../view/change_Password.php"; ?>
       <?php include "../view/notification_panel.php"; ?>
+      <?php include "../view/dashboard_footer.php"; ?>
   </div>
   <script src="../assets/js/patient_dashboard.js"></script>
 </body>

@@ -60,7 +60,6 @@ $adminUsername = $_SESSION['user']['username'];
     </div>
 </div>
 
-  <?php include "../view/dashboardFooter.php";?>
 
     <script src="../assets/js/adminDashboard.js"></script>
 </body>

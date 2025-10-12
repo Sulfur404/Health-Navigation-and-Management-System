@@ -77,7 +77,7 @@ $hospitalUsername = $_SESSION['user']['username'];
         <?php include "../view/hdash_change_Password.php"; ?>
         <?php include "../view/notification_panel.php"; ?>
 
-    <?php include "../view/dashboard_footer.php"; ?>
+      <?php include "../view/dashboard_footer.php"; ?>
     </div>
 
     
