@@ -6,7 +6,6 @@ class signin_Model {
         $this->conn = $db;
     }
 
-    // Fetch user by username
     public function signin($username) {
         $stmt = $this->conn->prepare(
             "SELECT user_id, username, usertype, password_hash, clearance_status 

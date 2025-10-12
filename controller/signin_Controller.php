@@ -9,18 +9,15 @@ if (isset($_POST['signin'])) {
     $username = trim($_POST['username']);
     $password = $_POST['password'];
 
-    //object oriented vesion
     $user = $signin_Model->signin($username);
 
     if ($user) {
-        // Verify hashed password
         if (!password_verify($password, $user['password_hash'])) {
             $_SESSION['signin_message'] = "Incorrect password!";
             header("Location: ../view/signin_signup.php");
             exit();
         }
 
-        // Check clearance status
         switch ($user['clearance_status']) {
             case 'approved':
                 $_SESSION['user'] = [
@@ -28,7 +25,6 @@ if (isset($_POST['signin'])) {
                     'usertype' => $user['usertype']
                 ];
 
-                // Redirect based on role
                 switch ($user['usertype']) {
                     case 'admin':    header("Location: ../view/adminDashboard.php"); break;
                     case 'hospital': header("Location: ../view/hospital_dashboard.php"); break;
@@ -61,7 +57,6 @@ if (isset($_POST['signin'])) {
     }
 }
 
-// Logout
 if (isset($_GET['action']) && $_GET['action'] === 'logout') {
     session_destroy();
     header("Location: ../view/signin_signup.php");
